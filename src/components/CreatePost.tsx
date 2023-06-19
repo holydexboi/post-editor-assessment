@@ -83,8 +83,8 @@ function CreatePost() {
   };
 
   const handleSocialEmbed = () => {
-    const newVid = socialUrl
-    console.log(socialUrl)
+    const newVid = socialUrl;
+    console.log(socialUrl);
     if (socialUrl !== "") setContent((prev) => prev + newVid);
     onClose();
     setOpenEmbed(false);
@@ -137,7 +137,7 @@ function CreatePost() {
               }}
             />
             {openEmbed && (
-              <Card w={{base:"64", md:"sm"}} mt={2}>
+              <Card w={{ base: "64", md: "sm" }} mt={2}>
                 <CardBody paddingX={0}>
                   <Text paddingX={"5"}>EMBEDS</Text>
                   <Flex mt={3} direction={"column"} gap={4}>
@@ -217,7 +217,11 @@ function CreatePost() {
             0/1000 words
           </Box>
         </Card>
-        <Modal isOpen={isOpen} onClose={onClose}>
+        <Modal
+          size={{ base: "xs", md: "lg" }}
+          isOpen={isOpen}
+          onClose={onClose}
+        >
           <ModalOverlay />
           <ModalContent>
             <ModalHeader fontSize={"md"} fontWeight={"bold"}>
@@ -228,26 +232,26 @@ function CreatePost() {
               {linkType === 1 && (
                 <>
                   <Text fontSize={"sm"}>Upload Image</Text>
-                  <Text fontSize={"x-small"} mt={"3"}>
+                  <Text fontSize={"x-small"} mt={{ base: "1.5", md: "3" }}>
                     FILE UPLOAD
                   </Text>
                   <Box
                     h={"40"}
                     border={"1px"}
-                    mt={3}
+                    mt={{ base: "1.5", md: "3" }}
                     borderColor={"#0A7227"}
-                    paddingX={"24"}
+                    paddingX={{ base: "10", md: "24" }}
                     borderRadius={"md"}
                     borderStyle={"dashed"}
                   >
                     <FormLabel
                       htmlFor="file-input"
                       border={"1px"}
-                      mt={"16"}
+                      mt={{ base: "14", md: "16" }}
                       textAlign={"center"}
                       borderColor={"#0A7227"}
                       borderRadius={"md"}
-                      fontSize={"smaller"}
+                      fontSize={{ base: "sm", md: "smaller" }}
                       paddingY={"1"}
                       fontWeight={"light"}
                     >
@@ -349,10 +353,14 @@ function CreatePost() {
                   <FormLabel htmlFor="code-input" fontSize={"x-small"} mt={"3"}>
                     CODE
                   </FormLabel>
-                  <Input id="code-input" onChange={(e) => setSocialUrl(e.target.value)} type="text" />
+                  <Input
+                    id="code-input"
+                    onChange={(e) => setSocialUrl(e.target.value)}
+                    type="text"
+                  />
                   <Flex mt={3} justify={"space-between"}>
                     <Text>Disable Caption</Text>
-                    <Switch id="email-alerts" colorScheme="whatsapp"/>
+                    <Switch id="email-alerts" colorScheme="whatsapp" />
                   </Flex>
                   <Flex gap={2} mt={3}>
                     <Button
