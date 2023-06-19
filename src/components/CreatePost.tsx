@@ -8,12 +8,10 @@ import {
   ModalContent,
   Text,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
   CardBody,
   Switch,
-  CardHeader,
   Select,
   Flex,
   FormLabel,
@@ -44,11 +42,12 @@ function CreatePost() {
     editor: ClassicEditor
   ) => {
     var newContent = editor.getData();
-    console.log(newContent);
+    console.log(event);
     setContent(newContent);
   };
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files) return;
     const file = e.target.files[0];
     const formData = new FormData();
     formData.append("avatar", file);
@@ -125,14 +124,6 @@ function CreatePost() {
                 console.log("Editor is ready to use!", editor);
               }}
               onChange={handleChange}
-              onBlur={(event, editor) => {
-                const data = editor.getData();
-                console.log("Blur.", editor);
-              }}
-              onFocus={(event, editor) => {
-                const data = editor.getData();
-                console.log("Focus.", editor);
-              }}
             />
 
             <BsPlusLg
