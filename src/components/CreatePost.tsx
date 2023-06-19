@@ -137,7 +137,7 @@ function CreatePost() {
               }}
             />
             {openEmbed && (
-              <Card w={"sm"} mt={2}>
+              <Card w={{base:"64", md:"sm"}} mt={2}>
                 <CardBody paddingX={0}>
                   <Text paddingX={"5"}>EMBEDS</Text>
                   <Flex mt={3} direction={"column"} gap={4}>
